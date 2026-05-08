@@ -1,7 +1,20 @@
 //se importa siempre como type
+
+import { useState } from "react";
 import { categories } from "../data/categoria";
 
 export default function Form() {
+
+	const [activity, setActivity] = useState({
+		category: 2,
+		name: '', //activity
+		calories: 0
+	})
+	
+
+
+
+
   return (
     <form className="space-y-5 bg-amber-50 p-10 rounded-lg" action="">
       <div className="grid grid-cols-1 gap-3">
@@ -10,7 +23,8 @@ export default function Form() {
         <select
           name=""
           id=""
-          className="border border-slate-300 p-2 rounded-lg w-full"
+					className="border border-slate-300 p-2 rounded-lg w-full"
+					value={activity.category}
 				>
 					
           {categories.map((category) => (
@@ -28,6 +42,7 @@ export default function Form() {
 				<input type="text"
 					className="border border-amber-100 p-2 rounded-lg"
 					placeholder="Ej. Comida, jugo de naranja, ensalada, Ejercicio, etc"
+					
 				/>
 				
 
@@ -43,7 +58,7 @@ export default function Form() {
 			</div>
 
 			<input type="submit" className="bg-gray-800 hover:bg-blue-800 w-full p-2 font-bold uppercase text-white cursor-pointer"
-				value='Guardar Comida o'
+				value='Guardar Comida o Guardar ejercicio'
 			/>
 
     </form>
